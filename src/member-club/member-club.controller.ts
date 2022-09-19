@@ -21,7 +21,7 @@ export class MemberClubController {
         return await this.memberClubService.findMembersFromClub(clubId);
     }
 
-    @Get(':clubId/members/memberId')
+    @Get(':clubId/members/:memberId')
     async findMemberFromClub(@Param('clubId') clubId: string, @Param('memberId') memberId: string) {
         return await this.memberClubService.findMemberFromClub(clubId, memberId);
     }
