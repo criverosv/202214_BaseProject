@@ -3,11 +3,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SocioEntity } from './socio/socio.entity';
+import { ClubEntity } from './club/club.entity';
+import { ClubModule } from './club/club.module';
+import { SocioModule } from './socio/socio.module';
+
 
 @Module({
   imports: [
-    ProductModule,
-    StoreModule,
+    ClubModule,
+    SocioModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -15,12 +19,11 @@ import { SocioEntity } from './socio/socio.entity';
       username: 'postgres',
       password: 'postgres',
       database: 'club',
-      entities: [SocioEntity],
+      entities: [SocioEntity, ClubEntity],
       dropSchema: true,
       synchronize: true,
-      keepConnectionAlive: true
+      keepConnectionAlive: true,
     }),
-    ProductStoreModule
   ],
   controllers: [AppController],
   providers: [AppService],

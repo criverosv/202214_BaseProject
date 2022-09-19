@@ -1,3 +1,4 @@
+import { ClubEntity } from '../club/club.entity';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -14,5 +15,7 @@ export class SocioEntity {
     @Column()
     birthdate: string;
 
-
+    @ManyToMany(() => ClubEntity, club => club.socios)
+    @JoinTable()
+    clubs: ClubEntity[];
 }
