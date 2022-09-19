@@ -2,7 +2,7 @@ import { ClubEntity } from '../club/club.entity';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class SocioEntity {
+export class MemberEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -15,7 +15,7 @@ export class SocioEntity {
     @Column()
     birthdate: string;
 
-    @ManyToMany(() => ClubEntity, club => club.socios)
+    @ManyToMany(() => ClubEntity, club => club.members)
     @JoinTable()
     clubs: ClubEntity[];
 }

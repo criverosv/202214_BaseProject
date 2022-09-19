@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class SocioDto {
+export class MemberDto {
 
     @IsString()
     @IsNotEmpty()
