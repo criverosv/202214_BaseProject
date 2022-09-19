@@ -6,6 +6,7 @@ import { MemberEntity } from './member/member.entity';
 import { ClubEntity } from './club/club.entity';
 import { ClubModule } from './club/club.module';
 import { MemberModule } from './member/member.module';
+import { MemberClubModule } from './member-club/member-club.module';
 
 
 @Module({
@@ -17,13 +18,14 @@ import { MemberModule } from './member/member.module';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'postgres',
+      password: 'password',
       database: 'club',
       entities: [MemberEntity, ClubEntity],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true,
     }),
+    MemberClubModule,
   ],
   controllers: [AppController],
   providers: [AppService],
