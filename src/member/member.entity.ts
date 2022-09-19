@@ -1,5 +1,5 @@
 import { ClubEntity } from '../club/club.entity';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, JoinTable, ManyToMany } from 'typeorm';
 
 @Entity()
 export class MemberEntity {

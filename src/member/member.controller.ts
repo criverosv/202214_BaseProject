@@ -2,6 +2,8 @@ import { Body, Controller, Delete, Get, HttpCode, Param, Post, Put, UseIntercept
 import { plainToInstance } from 'class-transformer';
 import { MemberDto } from './member.dto';
 import { MemberEntity } from './member.entity';
+import { MemberService } from './member.service';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 
 
 @Controller('members')

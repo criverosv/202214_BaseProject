@@ -21,7 +21,7 @@ export class MemberService {
         if (!member)
             throw new BusinessLogicException("The member with the given id was not found", BusinessError.NOT_FOUND);
 
-        return store;
+        return member;
     }
 
     async create(member: MemberEntity): Promise<MemberEntity> {
