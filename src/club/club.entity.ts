@@ -1,4 +1,4 @@
-import { SocioEntity } from '../socio/socio.entity';
+import { MemberEntity } from '../member/member.entity';
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -16,7 +16,7 @@ export class ClubEntity {
     @Column()
     address: string;
 
-    @ManyToMany(() => SocioEntity, socio => socio.clubs)
-    socios: SocioEntity[];
+    @ManyToMany(() => MemberEntity, member => member.clubs)
+    members: MemberEntity[];
 
 }
