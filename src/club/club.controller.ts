@@ -3,6 +3,8 @@ import { plainToInstance } from 'class-transformer';
 import { ClubDto } from './club.dto';
 import { ClubEntity } from './club.entity';
 import { ClubService } from './club.service';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
+
 
 
 @Controller('clubs')

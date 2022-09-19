@@ -1,5 +1,5 @@
 import { MemberEntity } from '../member/member.entity';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
 
 @Entity()
 export class ClubEntity {
@@ -11,10 +11,13 @@ export class ClubEntity {
     name: string;
 
     @Column()
-    city: string;
+    foundationDate: string;
 
     @Column()
-    address: string;
+    image: string;
+
+    @Column()
+    description: string;
 
     @ManyToMany(() => MemberEntity, member => member.clubs)
     members: MemberEntity[];
